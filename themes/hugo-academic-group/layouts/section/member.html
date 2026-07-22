@@ -1,0 +1,51 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+
+<div class="container">
+    <h1>Team</h1>
+    {{ range (sort .Data.Pages ".Params.sort_position") }}
+            {{partial "member_li" .}}
+    {{ end }}
+</div>
+
+{{ $guests_len := len (where .Site.RegularPages "Section" "guests" ) }}
+{{ if gt $guests_len 0 }}
+
+<div class="container">
+    <h3>Affiliates</h3>
+    {{ range where .Site.RegularPages "Section" "guests" }}
+        {{ partial "guests_li" . }} <!-- Assuming you have a 'guest_li' partial to format guest entries, similar to 'alumni_li'. -->
+    {{ end }}
+</div>
+
+{{ end }}
+
+{{ $alumni_len := len (where .Site.RegularPages "Section" "alumni" ) }}
+{{ if gt $alumni_len 0 }}
+<div class="container">
+    <h3>Alumni</h3>
+    {{ range where .Site.RegularPages "Section" "alumni" }}
+        {{ partial "alumni_li" . }}
+    {{ end }}
+</div>
+
+{{ end }}
+<hr />
+<row class="container">
+    <div class="col-xs-12 col-md-2">
+
+    </div>
+    <div class="col-xs-12 col-md-2 center-block">
+        <img src="/microscope.png" width="200px" class="img-rounded"></img>
+    </div>
+    <div class="container col-xs-12 col-md-5"> 
+        <h3 id="join">Become an Affiliate</h3>
+        <p>At Icy Seas Co-Lab we value your expertise. Therefore we would like to include you in our directory of topical experts.</p>
+        <p>What this means is that your name and affiliate will be included in the Icy Seas Co-Lab's directory (public-facing). If a project would benefit from your consultation, overview, review, etc. then we will offer to hire you as a contractor on that project. Whether that is for an hour or more is dependent on the project, resources, and apparent value. You can <b>always</b> decline an invitation.</p>
+        <p>Typically we would expect to pay ~$100/hr depending on the client's needs.</p>
+        <p>Please <a href="https://cloud.icyseascolab.io/apps/forms/s/4DTLyYdX7GDGNpFW3kyEiLSD" target="_new_">sign up here</a>!</p>
+    </div>
+</row>
+
+{{ partial "footer_container.html" . }}
+{{ partial "footer.html" . }}

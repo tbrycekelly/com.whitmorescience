@@ -1,0 +1,47 @@
+staticDir = "static"
+baseURL = "https://www.whitmorescience.com/"
+theme = "hugo-academic-group"
+title = "Whitmore Science"
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
+copyright = "&copy; 2026 Laura M. Whitmore"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  description = "Oceanographer Laura M. Whitmore studies Arctic Ocean circulation, sea-ice biogeochemistry, and trace elements across polar marine systems."
+  author = "Laura M. Whitmore"
+  email = "lmwhitmore@alaska.edu"
+  custom_css = ["whitmore-icy.css"]
+  asset_version = "20260722-1"
+
+  [[params.logo]]
+    image = ""
+    link = "/"
+
+[[menu.main]]
+  name = "Research"
+  url = "/research/"
+  weight = 10
+
+[[menu.main]]
+  name = "Fieldwork"
+  url = "/fieldwork/"
+  weight = 20
+
+[[menu.main]]
+  name = "Publications"
+  url = "/publications/"
+  weight = 30
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 40
+
+[outputs]
+  home = ["HTML"]
