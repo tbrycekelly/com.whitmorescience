@@ -177,6 +177,9 @@ h1, h2, h3 { color: var(--ws-navy); font-family: Merriweather, Georgia, serif; }
   .ws-navbar-brand { height: 69px; padding-top: 4px; padding-bottom: 4px; }
   .ws-navbar-logo { width: auto; height: 61px; }
   .ws-navbar .navbar-toggle { margin-top: 17px; }
+  .ws-navbar .navbar-collapse { max-height: calc(100vh - 70px); border-top: 1px solid var(--ws-line); background: #fff; box-shadow: 0 12px 24px rgba(6,43,70,.1); }
+  .ws-navbar .navbar-nav { margin-top: 0; margin-bottom: 0; }
+  .ws-navbar .navbar-nav > li > a { padding: 12px 20px; }
   .ws-icy-main, .ws-icy-page { padding-top: 69px; }
 }
 
