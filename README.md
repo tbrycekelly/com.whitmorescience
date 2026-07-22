@@ -26,11 +26,14 @@ Generated output is written to `public/` and is not committed.
 - `content/research.md` — research themes, programs, and recent projects
 - `content/fieldwork.md` — sea-going and field experience
 - `content/publications.md` — selected peer-reviewed publications
-- `content/about.md` — biography and contact information
+- `content/about.md` — biography
+- `content/contact.md` — email, addresses, shipping guidance, and professional profiles
+- `content/projects/` — project landing page and editable individual project pages
+- `content/proposals.md` — funded and unfunded proposals with linked research outcomes
 
-The subpage hero uses `static/assets/hero-subpages.jpg`, a deliberate duplicate of the homepage photograph. It can be cropped or edited independently without changing the homepage image.
+Full-resolution source photographs live in `assets/images/`. Hugo generates responsive WebP variants and compressed JPEG fallbacks during each build. The subpage hero uses `assets/images/hero-subpages.jpg`, a deliberate duplicate of the homepage photograph that can be edited independently.
 
-Original Whitmore Science logo files are preserved in `static/brand/`. The navigation uses the horizontal logo on larger screens and switches to the compact initials logo on mobile. The footer uses the original LMW Oceanography mark.
+Original Whitmore Science logo files are preserved in `static/brand/`. The navigation uses the horizontal logo on wide screens, the 100-pixel-tall compact mark at tablet widths, and a smaller compact mark on mobile. The footer uses the original LMW Oceanography mark.
 
 ## GitHub Pages
 

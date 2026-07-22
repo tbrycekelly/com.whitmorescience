@@ -1,0 +1,21 @@
+{{- $source := resources.Get (.Get "src") -}}
+{{- if not $source -}}
+  {{- errorf "responsive-image: unable to find %q" (.Get "src") -}}
+{{- end -}}
+{{- $alt := .Get "alt" -}}
+{{- $sizes := .Get "sizes" | default "100vw" -}}
+{{- $loading := .Get "loading" | default "lazy" -}}
+{{- $srcset := slice -}}
+{{- range slice 480 640 960 1200 -}}
+  {{- if ge $source.Width . -}}
+    {{- $variant := $source.Resize (printf "%dx webp q72" .) -}}
+    {{- $srcset = $srcset | append (printf "%s %dw" $variant.RelPermalink .) -}}
+  {{- end -}}
+{{- end -}}
+{{- $fallbackWidth := $source.Width -}}
+{{- if gt $fallbackWidth 1200 -}}{{- $fallbackWidth = 1200 -}}{{- end -}}
+{{- $fallback := $source.Resize (printf "%dx jpg q82" $fallbackWidth) -}}
+<picture class="ws-responsive-image">
+  <source type="image/webp" srcset="{{ delimit $srcset ", " }}" sizes="{{ $sizes }}">
+  <img src="{{ $fallback.RelPermalink }}" alt="{{ $alt }}" width="{{ $fallback.Width }}" height="{{ $fallback.Height }}" loading="{{ $loading }}" decoding="async">
+</picture>

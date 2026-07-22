@@ -1,0 +1,42 @@
+{{- $homeSource := resources.Get "images/hero.jpg" -}}
+{{- $homeSmallWebp := $homeSource.Resize "768x webp q72" -}}
+{{- $homeLargeWebp := $homeSource.Resize "1500x webp q72" -}}
+{{- $homeSmallJpeg := $homeSource.Resize "768x jpg q82" -}}
+{{- $homeLargeJpeg := $homeSource.Resize "1500x jpg q82" -}}
+{{- $pageSource := resources.Get "images/hero-subpages.jpg" -}}
+{{- $pageSmallWebp := $pageSource.Resize "768x webp q72" -}}
+{{- $pageLargeWebp := $pageSource.Resize "1495x webp q72" -}}
+{{- $pageSmallJpeg := $pageSource.Resize "768x jpg q82" -}}
+{{- $pageLargeJpeg := $pageSource.Resize "1495x jpg q82" -}}
+<style>
+  .ws-home .ws-hero {
+    background-image: linear-gradient(105deg, rgba(4,38,62,.83), rgba(4,54,82,.65) 58%, rgba(3,43,69,.46)), url('{{ $homeLargeJpeg.RelPermalink }}');
+  }
+  .ws-icy-page .ws-page-intro {
+    background-image: linear-gradient(105deg, rgba(4,38,62,.86), rgba(4,54,82,.70) 58%, rgba(3,43,69,.52)), url('{{ $pageLargeJpeg.RelPermalink }}');
+  }
+  @supports (background-image: image-set(url("image.webp") type("image/webp"))) {
+    .ws-home .ws-hero {
+      background-image: linear-gradient(105deg, rgba(4,38,62,.83), rgba(4,54,82,.65) 58%, rgba(3,43,69,.46)), image-set(url('{{ $homeLargeWebp.RelPermalink }}') type("image/webp"), url('{{ $homeLargeJpeg.RelPermalink }}') type("image/jpeg"));
+    }
+    .ws-icy-page .ws-page-intro {
+      background-image: linear-gradient(105deg, rgba(4,38,62,.86), rgba(4,54,82,.70) 58%, rgba(3,43,69,.52)), image-set(url('{{ $pageLargeWebp.RelPermalink }}') type("image/webp"), url('{{ $pageLargeJpeg.RelPermalink }}') type("image/jpeg"));
+    }
+  }
+  @media (max-width: 767px) {
+    .ws-home .ws-hero {
+      background-image: linear-gradient(105deg, rgba(4,38,62,.83), rgba(4,54,82,.65) 58%, rgba(3,43,69,.46)), url('{{ $homeSmallJpeg.RelPermalink }}');
+    }
+    .ws-icy-page .ws-page-intro {
+      background-image: linear-gradient(105deg, rgba(4,38,62,.86), rgba(4,54,82,.70) 58%, rgba(3,43,69,.52)), url('{{ $pageSmallJpeg.RelPermalink }}');
+    }
+    @supports (background-image: image-set(url("image.webp") type("image/webp"))) {
+      .ws-home .ws-hero {
+        background-image: linear-gradient(105deg, rgba(4,38,62,.83), rgba(4,54,82,.65) 58%, rgba(3,43,69,.46)), image-set(url('{{ $homeSmallWebp.RelPermalink }}') type("image/webp"), url('{{ $homeSmallJpeg.RelPermalink }}') type("image/jpeg"));
+      }
+      .ws-icy-page .ws-page-intro {
+        background-image: linear-gradient(105deg, rgba(4,38,62,.86), rgba(4,54,82,.70) 58%, rgba(3,43,69,.52)), image-set(url('{{ $pageSmallWebp.RelPermalink }}') type("image/webp"), url('{{ $pageSmallJpeg.RelPermalink }}') type("image/jpeg"));
+      }
+    }
+  }
+</style>

@@ -17,7 +17,7 @@ copyright = "&copy; 2026 Laura M. Whitmore"
   author = "Laura M. Whitmore"
   email = "lmwhitmore@alaska.edu"
   custom_css = ["whitmore-icy.css"]
-  asset_version = "20260722-1"
+  asset_version = "20260722-3"
 
   [[params.logo]]
     image = ""
@@ -42,6 +42,16 @@ copyright = "&copy; 2026 Laura M. Whitmore"
   name = "About"
   url = "/about/"
   weight = 40
+
+[[menu.main]]
+  name = "Proposals"
+  url = "/proposals/"
+  weight = 45
+
+[[menu.main]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 50
 
 [outputs]
   home = ["HTML"]

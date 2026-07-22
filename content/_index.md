@@ -15,7 +15,6 @@ description: "Oceanographer Laura M. Whitmore studies Arctic Ocean circulation, 
       </div>
     </div>
     <figure class="ws-hero-media">
-      <img src="/assets/hero.jpg" alt="Researchers in red survival suits working on an Arctic sea-ice floe." />
       <figcaption class="ws-image-note">Field observations connect chemical signals to the processes shaping polar marine systems.</figcaption>
     </figure>
   </section>
@@ -33,7 +32,7 @@ description: "Oceanographer Laura M. Whitmore studies Arctic Ocean circulation, 
   </section>
 
   <section class="ws-section ws-feature">
-    <img src="/assets/arctic-cruise.jpg" alt="View from a research vessel working among Arctic sea ice." />
+    {{< responsive-image src="images/arctic-cruise.jpg" alt="View from a research vessel working among Arctic sea ice." sizes="(max-width: 900px) calc(100vw - 40px), 55vw" loading="lazy" >}}
     <div class="ws-feature-copy">
       <p class="ws-eyebrow">At sea and on the ice</p>
       <h2>Evidence begins with careful observation.</h2>
@@ -50,8 +49,7 @@ description: "Oceanographer Laura M. Whitmore studies Arctic Ocean circulation, 
   <section class="ws-section">
     <div class="ws-section-head">
       <p class="ws-eyebrow">Collaboration</p>
-      <div><h2>Science at ocean scale is collective work.</h2><p>Research spans long-term observing systems, international field programs, synthesis teams, and open scientific computing—including NABOS, MOSAiC, GEOTRACES, and collaborative work across the Arctic, Pacific, and Southern oceans.</p><div class="ws-actions"><a class="ws-button primary" href="mailto:lmwhitmore@alaska.edu">Start a conversation</a><a class="ws-button" href="https://github.com/lmwhitmore" rel="noopener noreferrer">Visit GitHub</a></div></div>
+      <div><h2>Science at ocean scale is collective work.</h2><p>Research spans long-term observing systems, international field programs, synthesis teams, and open scientific computing—including NABOS, MOSAiC, GEOTRACES, and collaborative work across the Arctic, Pacific, and Southern oceans.</p><div class="ws-actions"><a class="ws-button primary" href="/contact/">Start a conversation</a><a class="ws-button" href="https://github.com/lmwhitmore" rel="noopener noreferrer">Visit GitHub</a></div></div>
     </div>
   </section>
 </div>
-

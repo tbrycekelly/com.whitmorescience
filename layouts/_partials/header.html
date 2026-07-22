@@ -16,6 +16,7 @@
   {{ range .Site.Params.custom_css }}
     <link rel="stylesheet" href="{{ printf "css/%s" . | relURL }}{{ with $.Site.Params.asset_version }}?v={{ . }}{{ end }}">
   {{ end }}
+  {{ partial "responsive-hero-css.html" . }}
   <link rel="canonical" href="{{ .Permalink }}">
   <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
   <script type="application/ld+json">
@@ -24,9 +25,18 @@
     "@type": "Person",
     "name": "Laura M. Whitmore",
     "url": "https://www.whitmorescience.com/",
-    "jobTitle": "Oceanographer",
+    "jobTitle": "Research Assistant Professor",
     "email": "mailto:lmwhitmore@alaska.edu",
-    "sameAs": ["https://github.com/lmwhitmore"]
+    "affiliation": {
+      "@type": "Organization",
+      "name": "International Arctic Research Center, University of Alaska Fairbanks"
+    },
+    "sameAs": [
+      "https://github.com/lmwhitmore",
+      "https://orcid.org/0000-0002-2363-4650",
+      "https://scholar.google.com/citations?hl=en&user=UjBr6g0AAAAJ",
+      "https://uaf-iarc.org/?directory_entry=laura-whitmore"
+    ]
   }
   </script>
 </head>
